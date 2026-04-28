@@ -93,7 +93,3 @@ const textStyle1 = {
 }
 
 const rightSection = { display: "flex", alignItems: "center" }
-
-const tabStyle={
-                  
-                }
