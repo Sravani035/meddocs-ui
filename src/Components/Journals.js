@@ -4,12 +4,12 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 
 //Images/Icons
-import addiction from "../assests/addiction.png";
-import community from "../assests/community.png";
-import neurology from "../assests/neurology.png";
-import gastroenterology from "../assests/gastroenterology.png";
-import clinicalNutrition from "../assests/clinicalNutrition.png";
-import biotechnology from "../assests/biotechnology-hover.png";
+import addiction from "../assets/addiction.png";
+import community from "../assets/community.png";
+import neurology from "../assets/neurology.png";
+import gastroenterology from "../assets/gastroenterology.png";
+import clinicalNutrition from "../assets/clinicalNutrition.png";
+import biotechnology from "../assets/biotechnology-hover.png";
 
 
 

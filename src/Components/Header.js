@@ -2,9 +2,9 @@
 import { Box, Typography } from "@mui/material";
 
 //Image/Icons
-import logo from "../assests/logo.png";
-import email from "../assests/email.png";
-import wtsup from "../assests/whatsapp.png";
+import logo from "../assets/logo.png";
+import email from "../assets/email.png";
+import wtsup from "../assets/whatsapp.png";
 
 
 const Header = () => {

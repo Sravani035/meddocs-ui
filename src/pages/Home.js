@@ -3,18 +3,18 @@
 import { Divider } from "@mui/material";
 
 //components used
-import TopBar from "../Components/TopBar";
-import Header from "../Components/Header";
-import Navbar from "../Components/NavBar";
-import About from "../Components/About";
-import Ebooks from "../Components/Ebooks";
-import Footer from "../Components/Footer";
-import Journals from "../Components/Journals";
-import Articles from "../Components/Articles";
-import InfoBanner from "../Components/InfoBanner";
-import Conferences from "../Components/Conferences";
-import ContactBanner from "../Components/ContactBanner";
-import PartnerCarousel from "../Components/PartnerCarousel "
+import TopBar from "../components/TopBar";
+import Header from "../components/Header";
+import Navbar from "../components/NavBar";
+import About from "../components/About";
+import Ebooks from "../components/Ebooks";
+import Footer from "../components/Footer";
+import Journals from "../components/Journals";
+import Articles from "../components/Articles";
+import InfoBanner from "../components/InfoBanner";
+import Conferences from "../components/Conferences";
+import ContactBanner from "../components/ContactBanner";
+import PartnerCarousel from "../components/PartnerCarousel "
 
 
 const Home = () => {

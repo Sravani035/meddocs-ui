@@ -4,7 +4,7 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 
 //Components
-import aboutImg from "../assests/abouUs.jpg";
+import aboutImg from "../assets/abouUs.jpg";
 
 const About = () => {
   return (

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
-import articale1 from '../assests/articale1.jpg'
-import articale2 from '../assests/articale2.jpg'
-import articale3 from '../assests/articale3.jpg'
+import articale1 from '../assets/articale1.jpg'
+import articale2 from '../assets/articale2.jpg'
+import articale3 from '../assets/articale3.jpg'
 
 const images = [
   { img: articale1, button: "MEDDOCS PUBLISHERS - EBOOKS" },

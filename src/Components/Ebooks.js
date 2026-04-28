@@ -5,14 +5,14 @@ import { Box, Typography, IconButton } from "@mui/material";
 
 
 //Images/Icons
-import book1 from '../assests/ebook1.jpg'
-import book2 from '../assests/ebook2.jpg'
-import book3 from '../assests/ebook3.jpg'
-import book4 from '../assests/ebook4.jpg'
-import book5 from '../assests/ebook5.jpg'
-import book6 from '../assests/ebook6.jpg'
-import book7 from '../assests/ebook7.jpg'
-import book8 from '../assests/ebook8.jpg'
+import book1 from '../assets/ebook1.jpg'
+import book2 from '../assets/ebook2.jpg'
+import book3 from '../assets/ebook3.jpg'
+import book4 from '../assets/ebook4.jpg'
+import book5 from '../assets/ebook5.jpg'
+import book6 from '../assets/ebook6.jpg'
+import book7 from '../assets/ebook7.jpg'
+import book8 from '../assets/ebook8.jpg'
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 

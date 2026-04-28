@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Typography, Divider } from "@mui/material";
 
 //components
-import ImageCarousel from "../Components/ImageCarousel.js";
+import ImageCarousel from "../components/ImageCarousel.js";
 
 const articles = [
   {

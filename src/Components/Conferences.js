@@ -4,7 +4,7 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 
 //Images/Icons
-import conferenceimg from "../assests/conferenceimg.png";
+import conferenceimg from "../assets/conferenceimg.png";
 
 const Conferences = () => {
   return (

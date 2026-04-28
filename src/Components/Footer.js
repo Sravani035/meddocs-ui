@@ -4,7 +4,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 
 //Images/Icon
-import logo from "../assests/logo.png";
+import logo from "../assets/logo.png";
 import EmailIcon from "@mui/icons-material/Email";
 import LanguageIcon from "@mui/icons-material/Language";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
