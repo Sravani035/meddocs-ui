@@ -1,6 +1,4 @@
 import React from "react";
-
-//mui
 import { Box, Typography, Button } from "@mui/material";
 
 const ContactBanner = () => {
@@ -8,6 +6,7 @@ const ContactBanner = () => {
     <Box sx={parentBox}>
       <Box sx={containerBox}>
         
+        {/* TEXT */}
         <Box sx={textWrapper}>
           <Typography sx={headingText}>
             MEDDOCS PUBLISHERS
@@ -21,6 +20,7 @@ const ContactBanner = () => {
           </Typography>
         </Box>
 
+        {/* BUTTON */}
         <Button sx={buttonStyle}>
           CONTACT US
         </Button>
@@ -34,7 +34,7 @@ export default ContactBanner;
 
 const parentBox = {
   background: "#1e88c8",
-  py: 3,
+  py: { xs: 3, md: 4 },
   borderBottom: "8px solid #e6e6e6",
 };
 
@@ -45,25 +45,28 @@ const containerBox = {
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
+
+  // 🔥 responsive layout
   flexDirection: { xs: "column", md: "row" },
-  gap: 2,
+  gap: { xs: 2, md: 3 },
+
+  textAlign: { xs: "center", md: "left" },
 };
 
 const textWrapper = {
   maxWidth: "850px",
-  textAlign: { xs: "center", md: "left" },
 };
 
 const headingText = {
   color: "#fff",
   fontWeight: 700,
-  fontSize: "1.8em",
+  fontSize: { xs: "20px", md: "28px" }, // 🔥 responsive
   mb: 1,
 };
 
 const descriptionText = {
   color: "#ffffff",
-  fontSize: "14px",
+  fontSize: { xs: "13px", md: "14px" },
   lineHeight: 1.6,
 };
 
@@ -71,14 +74,19 @@ const buttonStyle = {
   background: "#e0e0e0",
   color: "#000",
   fontWeight: 600,
-  fontSize: "16px",
-  px: 4,
-  py: 1.5,
+
+  // 🔥 responsive button
+  fontSize: { xs: "14px", md: "16px" },
+  px: { xs: 3, md: 4 },
+  py: { xs: 1, md: 1.5 },
+
   borderRadius: "2px",
   whiteSpace: "nowrap",
   boxShadow: "none",
+
+  mt: { xs: 1, md: 0 },
+
   "&:hover": {
     background: "#cfcfcf",
-    color: "#000",
   },
 };

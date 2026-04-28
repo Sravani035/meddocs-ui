@@ -1,17 +1,12 @@
 import React from "react";
-
-//Mui
 import { Box, Typography, Button } from "@mui/material";
 
-//Images/Icons
 import addiction from "../assets/addiction.png";
 import community from "../assets/community.png";
 import neurology from "../assets/neurology.png";
 import gastroenterology from "../assets/gastroenterology.png";
 import clinicalNutrition from "../assets/clinicalNutrition.png";
 import biotechnology from "../assets/biotechnology-hover.png";
-
-
 
 const data = [
   { title: "Biotechnology", desc: "The term biotechnology is said as a technological application that modifies the products or...", icon: biotechnology },
@@ -26,6 +21,7 @@ const Journals = () => {
   return (
     <Box sx={wrapper}>
       
+      {/* LEFT PANEL */}
       <Box sx={leftPanel}>
         <Typography sx={leftHeading}>
           Open Access Peer <br /> Reviewed Journals
@@ -36,28 +32,37 @@ const Journals = () => {
         <Typography sx={leftText}>
           We are dedicated to publish informative journals covering various
           areas of science, medicine and latest technology. We follow open access
-          policies. All our published journals are peer-reviewed academic and
-          scholarly articles...
+          policies...
         </Typography>
 
-        <Button sx={leftButton}>View All Journals</Button>
+        <Button sx={leftButton}>
+          View All Journals
+        </Button>
       </Box>
 
+      {/* RIGHT GRID */}
       <Box sx={gridContainer}>
         {data.map((item, index) => (
-          <Box key={index} sx={cardBox(index)}>
+          <Box key={index} sx={cardBox}>
             
             <Box component="img" src={item.icon} sx={iconStyle} />
 
-            <Typography sx={cardTitle}>{item.title}</Typography>
+            <Typography sx={cardTitle}>
+              {item.title}
+            </Typography>
 
-            <Typography sx={cardDesc}>{item.desc}</Typography>
+            <Typography sx={cardDesc}>
+              {item.desc}
+            </Typography>
 
-            <Button sx={cardButton}>Read More</Button>
+            <Button sx={cardButton}>
+              Read More
+            </Button>
 
           </Box>
         ))}
       </Box>
+
     </Box>
   );
 };
@@ -73,16 +78,20 @@ const leftPanel = {
   flex: 1,
   background: "linear-gradient(135deg, #1e73be, #3aa0d8)",
   color: "#fff",
-  p: 5,
-  minHeight: 500,
+  p: { xs: 3, md: 5 },
+
+  // 🔥 FIX HEIGHT
+  minHeight: { xs: "auto", md: 500 },
+
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
+  textAlign: { xs: "center", md: "left" },
 };
 
 const leftHeading = {
   fontWeight: 700,
-  fontSize: "30px",
+  fontSize: { xs: "22px", md: "30px" },
   color: "#dff2ff",
   mb: 2,
 };
@@ -92,13 +101,14 @@ const underline = {
   height: 2,
   background: "#fff",
   mb: 3,
+  mx: { xs: "auto", md: 0 },
 };
 
 const leftText = {
   mb: 4,
   fontWeight: 500,
-  color: "#fff",
   lineHeight: 1.6,
+  fontSize: { xs: "13px", md: "14px" },
 };
 
 const leftButton = {
@@ -108,41 +118,51 @@ const leftButton = {
   px: 3,
   py: 1,
   textTransform: "none",
+  alignSelf: { xs: "center", md: "flex-start" },
 };
 
 const gridContainer = {
   flex: 2,
   display: "grid",
-  gridTemplateColumns: { xs: "1fr", sm: "repeat(2,1fr)", md: "repeat(3,1fr)" },
-  borderLeft: "1px solid #cfe2f3",
+  gridTemplateColumns: {
+    xs: "1fr",
+    sm: "repeat(2, 1fr)",
+    md: "repeat(3, 1fr)",
+  },
 };
 
-const cardBox = (index) => ({
-  p: 4,
+const cardBox = {
+  p: { xs: 3, md: 4 },
   textAlign: "center",
-  borderBottom: "1px solid #cfe2f3",
-  borderRight: (index + 1) % 3 !== 0 ? "1px solid #cfe2f3" : "none",
+  border: "1px solid #cfe2f3",
+
+  // 🔥 CLEAN GRID (no broken borders)
+  borderRight: "none",
+  borderBottom: "none",
+
   transition: "0.3s",
+
   "&:hover": {
     background: "#f7fbff",
+    transform: "translateY(-3px)",
   },
-});
+};
 
 const iconStyle = {
-  width: 50,
-  height: 50,
+  width: { xs: 40, md: 50 },
+  height: { xs: 40, md: 50 },
   mb: 2,
 };
 
 const cardTitle = {
   color: "#3a7ca5",
   fontWeight: 700,
-  fontSize: "18px",
+  fontSize: { xs: "16px", md: "18px" },
   mb: 1,
 };
 
 const cardDesc = {
-  fontSize: "14px",
+  fontSize: { xs: "13px", md: "14px" },
   color: "#666",
   mb: 2,
   lineHeight: 1.5,

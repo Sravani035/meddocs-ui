@@ -1,29 +1,26 @@
 import React from "react";
-
-//Mui
 import { Box, Typography } from "@mui/material";
 
-//Images/Icon
 import logo from "../assets/logo.png";
 import EmailIcon from "@mui/icons-material/Email";
 import LanguageIcon from "@mui/icons-material/Language";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-
 const Footer = () => {
   const quickLinks = [
-  "Home", "About", "Journals", "eBooks", "Conferences", "FAQ's",
-  "Membership", "Contact Us", "Submit Manuscript", "Author Guidelines",
-  "Join As A Reviewer", "Open Access", "Peer Review", "Plagiarism", "Publication Fee"
-];
+    "Home","About","Journals","eBooks","Conferences","FAQ's",
+    "Membership","Contact Us","Submit Manuscript","Author Guidelines",
+    "Join As A Reviewer","Open Access","Peer Review","Plagiarism","Publication Fee"
+  ];
 
-const mainLinks = ["Journals", "Conferences", "eBooks"];
+  const mainLinks = ["Journals","Conferences","eBooks"];
+  const socialLinks = ["Facebook","Twitter","Google +"];
 
-const socialLinks = ["Facebook", "Twitter", "Google +"];
   return (
     <Box sx={parentBox}>
       <Box sx={containerBox}>
 
+        {/* LOGO */}
         <Box sx={logoSection}>
           <Box component="img" src={logo} sx={logoStyle} />
           <Typography sx={copyrightText}>
@@ -31,6 +28,7 @@ const socialLinks = ["Facebook", "Twitter", "Google +"];
           </Typography>
         </Box>
 
+        {/* CONTACT */}
         <Box sx={columnBox}>
           <Typography sx={heading}>CONTACT US</Typography>
 
@@ -54,6 +52,7 @@ const socialLinks = ["Facebook", "Twitter", "Google +"];
           </Box>
         </Box>
 
+        {/* QUICK LINKS */}
         <Box sx={columnBox}>
           <Typography sx={heading}>QUICK LINKS</Typography>
 
@@ -64,6 +63,7 @@ const socialLinks = ["Facebook", "Twitter", "Google +"];
           ))}
         </Box>
 
+        {/* MAIN LINKS */}
         <Box sx={columnBox}>
           <Typography sx={heading}>MAIN LINKS</Typography>
 
@@ -91,8 +91,8 @@ export default Footer;
 
 const parentBox = {
   background: "#f5f5f5",
-  pt: 6,
-  pb: 4,
+  pt: { xs: 4, md: 6 },
+  pb: { xs: 3, md: 4 },
 };
 
 const containerBox = {
@@ -100,34 +100,35 @@ const containerBox = {
   margin: "0 auto",
   px: 2,
   display: "flex",
-  justifyContent: "space-between",
-  gap: 4,
   flexWrap: "wrap",
+  justifyContent: "space-between",
+  gap: { xs: 3, md: 4 },
 };
 
 const logoSection = {
   flex: "1 1 250px",
-  textAlign: "center",
+  textAlign: { xs: "center", md: "left" },
 };
 
 const logoStyle = {
-  width: 180,
+  width: { xs: 140, md: 180 },
   mb: 2,
 };
 
 const copyrightText = {
   color: "#666",
-  fontSize: "14px",
+  fontSize: { xs: "12px", md: "14px" },
 };
 
 const columnBox = {
   flex: "1 1 200px",
+  textAlign: { xs: "center", md: "left" },
 };
 
 const heading = {
   fontWeight: 800,
   color: "#000",
-  fontSize: "18px",
+  fontSize: { xs: "16px", md: "18px" },
   mb: 2,
 };
 
@@ -140,32 +141,35 @@ const row = {
   display: "flex",
   gap: 1,
   mb: 1,
+  alignItems: "flex-start",
+  justifyContent: { xs: "center", md: "flex-start" },
 };
 
 const iconStyle = {
-  fontSize: "18px",
+  fontSize: { xs: 16, md: 18 },
   mt: "2px",
 };
 
 const addressText = {
-  fontSize: "14px",
+  fontSize: { xs: "12px", md: "14px" },
   color: "#666",
   lineHeight: 1.6,
 };
 
 const text = {
-  fontSize: "14px",
+  fontSize: { xs: "12px", md: "14px" },
   color: "#555",
 };
 
 const linkText = {
-  fontSize: "14px",
+  fontSize: { xs: "12px", md: "14px" },
   color: "#636162",
   mb: 1,
   cursor: "pointer",
   transition: "0.3s",
+
   "&:hover": {
     color: "#1e73be",
-    transform: "translateX(3px)", 
+    transform: "translateX(3px)",
   },
 };

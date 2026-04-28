@@ -1,9 +1,6 @@
 import React from "react";
-//mui
 import { Box, Typography, Divider } from "@mui/material";
-
-//components
-import ImageCarousel from "../components/ImageCarousel.js";
+import ImageCarousel from "../components/ImageCarousel";
 
 const articles = [
   {
@@ -33,20 +30,29 @@ const Articles = () => {
     <Box sx={parentBox}>
       <Box sx={containerBox}>
         
+        {/* LEFT - CAROUSEL */}
         <Box sx={leftBox}>
           <ImageCarousel />
         </Box>
 
+        {/* RIGHT - CONTENT */}
         <Box sx={rightBox}>
           <Typography sx={headingText}>ARTICLES</Typography>
 
           {articles.map((item, index) => (
             <Box key={index} sx={articleItem}>
-              <Typography sx={titleText}>{item.title}</Typography>
+              
+              <Typography sx={titleText}>
+                {item.title}
+              </Typography>
 
-              <Typography sx={authorText}>{item.author}</Typography>
+              <Typography sx={authorText}>
+                {item.author}
+              </Typography>
 
-              <Box sx={journalTag}>{item.journal}</Box>
+              <Box sx={journalTag}>
+                {item.journal}
+              </Box>
 
               {index !== articles.length - 1 && (
                 <Divider sx={dividerStyle} />
@@ -64,7 +70,7 @@ export default Articles;
 
 const parentBox = {
   background: "#0d3b66",
-  py: 6,
+  py: { xs: 4, md: 6 },
 };
 
 const containerBox = {
@@ -72,13 +78,18 @@ const containerBox = {
   margin: "0 auto",
   px: 2,
   display: "flex",
-  gap: 4,
+  gap: { xs: 3, md: 4 },
   flexDirection: { xs: "column", md: "row" },
 };
 
 const leftBox = {
   flex: 1,
-  maxWidth: { md: "35%" },
+  maxWidth: { xs: "100%", md: "35%" },
+
+  // 🔥 FIX CAROUSEL HEIGHT
+  "& > *": {
+    height: { xs: 250, sm: 300, md: 400 },
+  },
 };
 
 const rightBox = {
@@ -88,8 +99,9 @@ const rightBox = {
 const headingText = {
   color: "#fff",
   fontWeight: 600,
-  fontSize: "25px",
+  fontSize: { xs: "20px", md: "25px" },
   mb: 3,
+  textAlign: { xs: "center", md: "left" },
 };
 
 const articleItem = {
@@ -98,14 +110,14 @@ const articleItem = {
 
 const titleText = {
   color: "#d2edff",
-  fontSize: "18px",
+  fontSize: { xs: "14px", md: "18px" },
   fontWeight: 600,
+  lineHeight: 1.5,
 };
 
 const authorText = {
   color: "#9ec9ff",
-  fontSize: "13px",
-  fontWeight: 400,
+  fontSize: { xs: "12px", md: "13px" },
   fontStyle: "italic",
   mt: 1,
 };
@@ -118,7 +130,7 @@ const journalTag = {
   borderRadius: "5px",
   background: "#003",
   color: "#CCC",
-  fontSize: "13px",
+  fontSize: { xs: "11px", md: "13px" },
 };
 
 const dividerStyle = {

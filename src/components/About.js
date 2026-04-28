@@ -1,9 +1,5 @@
 import React from "react";
-
-//mui
 import { Box, Typography, Button } from "@mui/material";
-
-//Components
 import aboutImg from "../assets/abouUs.jpg";
 
 const About = () => {
@@ -11,10 +7,15 @@ const About = () => {
     <Box sx={parentBox}>
       <Box sx={containerBox}>
         
+        {/* LEFT CONTENT */}
         <Box sx={leftBox}>
-          <Typography sx={subHeading}>WELCOME TO MEDDOCS</Typography>
+          <Typography sx={subHeading}>
+            WELCOME TO MEDDOCS
+          </Typography>
 
-          <Typography sx={mainHeading}>ABOUT US</Typography>
+          <Typography sx={mainHeading}>
+            ABOUT US
+          </Typography>
 
           <Box sx={underline} />
 
@@ -29,7 +30,9 @@ const About = () => {
             which is very necessary to treat patients in the best possible way.
           </Typography>
 
-          <Button sx={buttonStyle}>READ MORE</Button>
+          <Button sx={buttonStyle}>
+            READ MORE
+          </Button>
         </Box>
 
         {/* RIGHT IMAGE */}
@@ -46,7 +49,7 @@ export default About;
 
 const parentBox = {
   background: "#f5f5f5",
-  py: 8,
+  py: { xs: 5, md: 8 },
 };
 
 const containerBox = {
@@ -54,9 +57,13 @@ const containerBox = {
   margin: "0 auto",
   px: 2,
   display: "flex",
-  gap: 6,
+  gap: { xs: 4, md: 6 },
   alignItems: "center",
+
+  // 🔥 RESPONSIVE
   flexDirection: { xs: "column", md: "row" },
+
+  textAlign: { xs: "center", md: "left" },
 };
 
 const leftBox = {
@@ -65,25 +72,33 @@ const leftBox = {
 
 const rightBox = {
   flex: 1,
+  width: "100%",
 };
 
 const imageStyle = {
-  width: "100%",       // 🔥 important fix
-  height: 350,
+  width: "100%",
+  height: {
+    xs: 220,
+    sm: 280,
+    md: 350,
+  },
   objectFit: "cover",
   borderRadius: "4px",
+
+  // 🔥 nice shadow
+  boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
 };
 
 const subHeading = {
   color: "#0688de",
   fontWeight: 700,
-  fontSize: "14px",
+  fontSize: { xs: "12px", md: "14px" },
   mb: 1,
 };
 
 const mainHeading = {
   fontWeight: 700,
-  fontSize: "2.6em",
+  fontSize: { xs: "26px", md: "2.6em" },
   color: "#060606",
   mb: 2,
 };
@@ -93,26 +108,27 @@ const underline = {
   height: 3,
   background: "#0688de",
   mb: 3,
+  mx: { xs: "auto", md: 0 }, // 🔥 center on mobile
 };
 
 const descriptionText = {
   color: "#000",
-  fontSize: "14px",
+  fontSize: { xs: "13px", md: "14px" },
   lineHeight: 1.7,
   mb: 3,
 };
 
 const buttonStyle = {
   background: "#1e73be",
-  px: 3,
-  py: 1.5,
+  px: { xs: 2.5, md: 3 },
+  py: { xs: 1, md: 1.5 },
   borderRadius: "2px",
   fontWeight: "bold",
+  fontSize: { xs: "13px", md: "14px" },
   boxShadow: "none",
-  color:'#fff',
+  color: "#fff",
+
   "&:hover": {
     background: "#155a96",
-      color:'#fff',
-
   },
 };
