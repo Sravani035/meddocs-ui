@@ -3,7 +3,7 @@
 import { Divider } from "@mui/material";
 
 //components used
-import TopBar from "../components/TopBar";
+import TopBar from "../components/Topbar";
 import Header from "../components/Header";
 import Navbar from "../components/NavBar";
 import About from "../components/About";
