@@ -116,6 +116,9 @@ const descriptionText = {
   fontSize: { xs: "13px", md: "14px" },
   lineHeight: 1.7,
   mb: 3,
+    maxWidth: "700px",     // ✅ LIMIT WIDTH
+  mx: { xs: "auto", md: 0 }, // ✅ center block, not text
+  textAlign: { xs: "left", md: "left" }, // ✅ FORCE LEFT
 };
 
 const buttonStyle = {

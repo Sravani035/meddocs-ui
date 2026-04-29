@@ -101,7 +101,7 @@ const headingText = {
   fontWeight: 600,
   fontSize: { xs: "20px", md: "25px" },
   mb: 3,
-  textAlign: { xs: "center", md: "left" },
+  textAlign: { xs: "left", md: "left" },
 };
 
 const articleItem = {

@@ -94,8 +94,9 @@ const logoStyle = {
 };
 
 const rightSection = {
-  display: "flex",
+  // display: "flex",
   alignItems: "center",
+  display: { xs: "none", md: "flex" },
 
   // 🔥 RESPONSIVE
   flexDirection: {

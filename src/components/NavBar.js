@@ -1,20 +1,15 @@
-// MUI
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
   Button,
-  Box,
   IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
+  Box,
+  Typography,
 } from "@mui/material";
-
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
 
-const menu = [
+const menuItems = [
   "HOME",
   "ABOUT US",
   "JOURNALS",
@@ -30,21 +25,22 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
+    <Box>
+      {/* TOP NAVBAR */}
       <AppBar position="sticky" sx={parentBox}>
         <Toolbar sx={toolbarStyle}>
           
-          {/* MOBILE MENU BUTTON */}
+          {/* MOBILE ICON */}
           <IconButton
-            sx={{ display: { xs: "block", md: "none" }, color: "#fff" }}
-            onClick={() => setOpen(true)}
+            sx={{ display: { xs: "block", md: "none" }, color: "#fff",ml: "auto"  }}
+            onClick={() => setOpen(!open)}
           >
             <MenuIcon />
           </IconButton>
 
           {/* DESKTOP MENU */}
-          <Box sx={menuBox}>
-            {menu.map((item, index) => (
+          <Box sx={desktopMenu}>
+            {menuItems.map((item, index) => (
               <Button key={index} sx={textStyle}>
                 {item}
               </Button>
@@ -53,23 +49,17 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
 
-      {/* MOBILE DRAWER */}
-      <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
-        <Box sx={{ width: 250 }}>
-          <List>
-            {menu.map((item, index) => (
-              <ListItem
-                button
-                key={index}
-                onClick={() => setOpen(false)}
-              >
-                <ListItemText primary={item} />
-              </ListItem>
-            ))}
-          </List>
+      {/* 🔥 DROPDOWN MENU (OPENS DOWN) */}
+      {open && (
+        <Box sx={mobileMenu}>
+          {menuItems.map((item, index) => (
+            <Typography key={index} sx={mobileItem}>
+              {item}
+            </Typography>
+          ))}
         </Box>
-      </Drawer>
-    </>
+      )}
+    </Box>
   );
 };
 
@@ -77,21 +67,21 @@ export default Navbar;
 
 const parentBox = {
   backgroundColor: "#1e73be",
+  //  top: 0,
+  // zIndex: 999,   // 🔥 IMPORTANT
+
 };
 
 const toolbarStyle = {
   maxWidth: "1200px",
-  margin: "0 auto",
-  width: "100%",
+  // width: "100%",
+  margin: { xs: "0", md: "0 auto" },
   display: "flex",
   justifyContent: "space-between",
 };
 
-const menuBox = {
-  display: {
-    xs: "none", // hide on mobile
-    md: "flex", // show on desktop
-  },
+const desktopMenu = {
+  display: { xs: "none", md: "flex" },
   gap: 2,
 };
 
@@ -99,9 +89,25 @@ const textStyle = {
   color: "#fff",
   fontWeight: 600,
   fontSize: "14px",
-  textTransform: "none",
+};
+
+/* 🔥 MOBILE DROPDOWN */
+const mobileMenu = {
+  display: { xs: "block", md: "none" },
+  background: "#1e73be",
+}
+;
+
+const mobileItem = {
+  color: "#fff",
+  fontSize: "16px",
+  fontWeight: 600,
+  px: 3,
+  py: 2,
+  borderBottom: "1px solid rgba(255,255,255,0.2)",
+  cursor: "pointer",
 
   "&:hover": {
-    backgroundColor: "#155a96",
+    background: "#155a96",
   },
 };

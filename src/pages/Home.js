@@ -15,12 +15,15 @@ import InfoBanner from "../components/InfoBanner";
 import Conferences from "../components/Conferences";
 import ContactBanner from "../components/ContactBanner";
 import PartnerCarousel from "../components/PartnerCarousel "
+import { Box, Button } from "@mui/material";
 
 
 const Home = () => {
   return (
     <>
-      <TopBar />
+      <Box sx={{ display: { xs: "none", md: "block" } }}>
+        <TopBar />
+      </Box>
       <Header />
       <Navbar />   
       <Articles />

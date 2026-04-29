@@ -28,7 +28,6 @@ const ImageCarousel = () => {
       sx={{
         position: "relative",
         width: "100%",
-        height: 600,
         borderRadius: "6px",
         overflow: "hidden",
       }}
