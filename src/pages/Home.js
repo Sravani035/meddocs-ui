@@ -15,7 +15,7 @@ import InfoBanner from "../components/InfoBanner";
 import Conferences from "../components/Conferences";
 import ContactBanner from "../components/ContactBanner";
 import PartnerCarousel from "../components/PartnerCarousel "
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 
 
 const Home = () => {
